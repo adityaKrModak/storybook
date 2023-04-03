@@ -1,0 +1,73 @@
+{
+  "name": "@storybook/builder-esbuild",
+  "version": "7.0.0-rc.10",
+  "description": "Storybook framework-agnostic API",
+  "keywords": [
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybookjs/storybook/tree/main/lib/core",
+  "bugs": {
+    "url": "https://github.com/storybookjs/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybookjs/storybook.git",
+    "directory": "lib/builder-esbuild"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/storybook"
+  },
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "node": "./dist/index.js",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "templates/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts"
+  ],
+  "scripts": {
+    "check": "../../../scripts/node_modules/.bin/tsc --noEmit",
+    "prep": "../../../scripts/prepare/bundle.ts"
+  },
+  "dependencies": {
+    "@craftamap/esbuild-plugin-html": "^0.5.0",
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
+    "@fal-works/esbuild-plugin-global-externals": "^2.1.2",
+    "@storybook/core-common": "^7.0.0-rc.10",
+    "@storybook/node-logger": "^7.0.0-rc.10",
+    "@storybook/preview-api": "^7.0.0-rc.10",
+    "esbuild": "^0.17.14",
+    "esbuild-plugin-raw": "^0.1.7",
+    "esbuild-plugin-ts-checker": "^1.0.2",
+    "escape-string-regexp": "^5.0.0",
+    "express": "^4.18.2",
+    "fs-extra": "^11.1.1",
+    "pretty-hrtime": "^1.0.3",
+    "slash": "^5.0.0",
+    "ts-dedent": "^2.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bundler": {
+    "entries": [
+      "./src/index.ts"
+    ],
+    "platform": "node"
+  },
+  "gitHead": "dd10adf7821c47f0d3a2e6a45d80eea2b906c3a2"
+}
